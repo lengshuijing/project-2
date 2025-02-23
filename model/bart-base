@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html class="">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, user-scalable=no"
+		/>
+		<meta name="description" content="We’re on a journey to advance and democratize artificial intelligence through open source and open science." />
+		<meta property="fb:app_id" content="1321688464574422" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@huggingface" />
+		<meta property="og:title" content="facebook/bart-base · Hugging Face" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://huggingface.co/facebook/bart-base" />
+		<meta property="og:image" content="https://huggingface.co/front/thumbnails/v2-2.png" />
+
+		<link rel="stylesheet" href="/front/build/style.b2a13ecb.css" />
+
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+		/>
+
+		 
+
+		<title>facebook/bart-base · Hugging Face</title>
+	</head>
+	<body
+		class="flex flex-col min-h-screen bg-white dark:bg-gray-950 text-black ModelPage"
+	>
+		<div class="flex flex-col min-h-screen "><header class="border-b border-gray-100 z-10"><div class="w-full px-4 lg:px-6 xl:container flex items-center h-16"><div class="flex flex-1 items-center"><a class="flex flex-none items-center mr-5 lg:mr-6" href="/"><img alt="Hugging Face's logo" class="md:mr-2 w-7" src="/front/assets/huggingface_logo-noborder.svg">
+				<span class="hidden text-lg font-bold whitespace-nowrap md:block">Hugging Face</span></a>
+			<div class="SVELTE_HYDRATER flex-1 lg:max-w-sm mr-2 sm:mr-4 lg:mr-6" data-props="{&quot;header&quot;:true,&quot;placeholder&quot;:&quot;Search models, datasets, users...&quot;,&quot;url&quot;:&quot;/api/quicksearch&quot;,&quot;searchParams&quot;:{&quot;withLinks&quot;:true}}" data-target="QuickSearch"><div class="relative "><input autocomplete="off" class="w-full dark:bg-gray-950 
+			form-input-alt h-9 pl-8 pr-3 focus:shadow-xl" name="" placeholder="Search models, datasets, users..."  spellcheck="false" type="text">
+	<svg class="absolute left-2.5 top-2.5 text-gray-400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M30 28.59L22.45 21A11 11 0 1 0 21 22.45L28.59 30zM5 14a9 9 0 1 1 9 9a9 9 0 0 1-9-9z" fill="currentColor"></path></svg>
+	</div></div>
+			<div class="SVELTE_HYDRATER " data-props="{&quot;apiInferenceUrl&quot;:&quot;https://api-inference.huggingface.co&quot;,&quot;hasAccesToSpaces&quot;:true}" data-target="NavigationMenuPhone"><button class="lg:hidden relative flex-none place-self-stretch flex items-center justify-center w-8" type="button"><svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="22" height="22" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" fill="currentColor"><path d="M4 24h24v2H4z"></path><path d="M4 12h24v2H4z"></path><path d="M4 18h24v2H4z"></path><path d="M4 6h24v2H4z"></path></svg></button>
+</div></div>
+		<nav aria-label="Main" class="ml-auto hidden lg:block"><ul class="flex items-center space-x-2"><li><a class="flex items-center group px-2 py-0.5 hover:text-indigo-700 dark:hover:text-gray-400" href="/models"><svg class="mr-1.5 text-gray-400 group-hover:text-indigo-500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-quaternary" d="M20.23 7.24L12 12L3.77 7.24a1.98 1.98 0 0 1 .7-.71L11 2.76c.62-.35 1.38-.35 2 0l6.53 3.77c.29.173.531.418.7.71z" opacity=".25" fill="currentColor"></path><path class="uim-tertiary" d="M12 12v9.5a2.09 2.09 0 0 1-.91-.21L4.5 17.48a2.003 2.003 0 0 1-1-1.73v-7.5a2.06 2.06 0 0 1 .27-1.01L12 12z" opacity=".5" fill="currentColor"></path><path class="uim-primary" d="M20.5 8.25v7.5a2.003 2.003 0 0 1-1 1.73l-6.62 3.82c-.275.13-.576.198-.88.2V12l8.23-4.76c.175.308.268.656.27 1.01z" fill="currentColor"></path></svg>
+				Models
+			</a></li>
+		<li><a class="flex items-center group px-2 py-0.5 hover:text-red-700 dark:hover:text-gray-400" href="/datasets"><svg class="mr-1.5 text-gray-400 group-hover:text-red-500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 25 25"><ellipse cx="12.5" cy="5" fill="currentColor" fill-opacity="0.25" rx="7.5" ry="2"></ellipse><path d="M12.5 15C16.6421 15 20 14.1046 20 13V20C20 21.1046 16.6421 22 12.5 22C8.35786 22 5 21.1046 5 20V13C5 14.1046 8.35786 15 12.5 15Z" fill="currentColor" opacity="0.5"></path><path d="M12.5 7C16.6421 7 20 6.10457 20 5V11.5C20 12.6046 16.6421 13.5 12.5 13.5C8.35786 13.5 5 12.6046 5 11.5V5C5 6.10457 8.35786 7 12.5 7Z" fill="currentColor" opacity="0.5"></path><path d="M5.23628 12C5.08204 12.1598 5 12.8273 5 13C5 14.1046 8.35786 15 12.5 15C16.6421 15 20 14.1046 20 13C20 12.8273 19.918 12.1598 19.7637 12C18.9311 12.8626 15.9947 13.5 12.5 13.5C9.0053 13.5 6.06886 12.8626 5.23628 12Z" fill="currentColor"></path></svg>
+				Datasets
+			</a></li>
+		<li><a class="flex items-center group px-2 py-0.5 hover:text-blue-700 dark:hover:text-blue-400" href="/spaces"><svg class="mr-1.5 text-gray-400 group-hover:text-blue-500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" viewBox="0 0 25 25"><path opacity=".5" d="M6.016 14.674v4.31h4.31v-4.31h-4.31ZM14.674 14.674v4.31h4.31v-4.31h-4.31ZM6.016 6.016v4.31h4.31v-4.31h-4.31Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M3 4.914C3 3.857 3.857 3 4.914 3h6.514c.884 0 1.628.6 1.848 1.414a5.171 5.171 0 0 1 7.31 7.31c.815.22 1.414.964 1.414 1.848v6.514A1.914 1.914 0 0 1 20.086 22H4.914A1.914 1.914 0 0 1 3 20.086V4.914Zm3.016 1.102v4.31h4.31v-4.31h-4.31Zm0 12.968v-4.31h4.31v4.31h-4.31Zm8.658 0v-4.31h4.31v4.31h-4.31Zm0-10.813a2.155 2.155 0 1 1 4.31 0 2.155 2.155 0 0 1-4.31 0Z" fill="currentColor"></path><path opacity=".25" d="M16.829 6.016a2.155 2.155 0 1 0 0 4.31 2.155 2.155 0 0 0 0-4.31Z" fill="currentColor"></path></svg>
+				Spaces
+			</a></li>
+		<li class="b-r"><div class="relative  v2-dropdown">
+	<button class="
+			px-2 py-0.5 hover:text-gray-500 dark:hover:text-gray-400 flex items-center 
+			
+			v2-dropdown-button" type="button">
+		<svg class="mr-1.5 text-gray-400 w-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" viewBox="0 0 11 8" preserveAspectRatio="xMidYMid meet" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 1.5H0V0.5H11V1.5ZM11 7.5H0V6.5H11V7.5ZM0 4.5H11V3.5H0V4.5Z"></path></svg>
+			Resources
+			</button>
+	
+	
+	<div class="absolute top-full mt-1 min-w-full w-auto bg-white rounded-xl overflow-hidden shadow-lg z-10 border border-gray-100
+		left-0
+		!w-52 v2-dropdown-menu hidden"><ul class="min-w-full w-auto">
+					<li><div class="col-span-full px-4 py-0.5 flex items-center justify-between font-semibold bg-gradient-to-r to-white dark:to-gray-925 whitespace-nowrap text-blue-800 from-blue-50 dark:text-blue-100 dark:from-blue-900">Website
+						</div>
+						<ul><li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/metrics">
+		<svg class="mr-1.5 text-gray-400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-quaternary" d="M6 23H2a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1z" opacity=".25" fill="currentColor"></path><path class="uim-primary" d="M14 23h-4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v20a1 1 0 0 1-1 1z" fill="currentColor"></path><path class="uim-tertiary" d="M22 23h-4a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1z" opacity=".5" fill="currentColor"></path></svg>
+			Metrics</a></li>
+
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/languages">
+		<svg class="mr-1.5 text-gray-400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-primary" d="M17 13H7a1 1 0 0 1 0-2h10a1 1 0 0 1 0 2z" fill="currentColor"></path><path class="uim-tertiary" d="M12 2a10 10 0 0 0-7.743 16.33l-1.964 1.963A1 1 0 0 0 3 22h9a10 10 0 0 0 0-20zM9 7h6a1 1 0 0 1 0 2H9a1 1 0 0 1 0-2zm6 10H9a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2zm2-4H7a1 1 0 0 1 0-2h10a1 1 0 0 1 0 2z" opacity=".5" fill="currentColor"></path><path class="uim-primary" d="M15 17H9a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2zm0-8H9a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2z" fill="currentColor"></path></svg>
+			Languages</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/organizations">
+		<svg class="mr-1.5 text-gray-400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-tertiary" d="M12 18a3.5 3.5 0 1 1 3.5-3.5A3.504 3.504 0 0 1 12 18z" opacity=".5" fill="currentColor"></path><path class="uim-primary" d="M14.64 16.772a3.452 3.452 0 0 1-5.28 0A4.988 4.988 0 0 0 7 21a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1a4.988 4.988 0 0 0-2.36-4.228z" fill="currentColor"></path><path class="uim-tertiary" d="M21 12a.996.996 0 0 1-.664-.252L12 4.338l-8.336 7.41a1 1 0 0 1-1.328-1.496l9-8a.999.999 0 0 1 1.328 0l9 8A1 1 0 0 1 21 12z" opacity=".5" fill="currentColor"></path><path class="uim-quaternary" d="M12 4.338l-8 7.111V21a1 1 0 0 0 1 1h3a1 1 0 0 1-1-1a4.988 4.988 0 0 1 2.36-4.228A3.469 3.469 0 0 1 8.5 14.5a3.5 3.5 0 0 1 7 0a3.469 3.469 0 0 1-.86 2.272A4.988 4.988 0 0 1 17 21a1 1 0 0 1-1 1h3a1 1 0 0 0 1-1v-9.551z" opacity=".25" fill="currentColor"></path></svg>
+			Organizations</a></li></ul></li>
+					<li><div class="col-span-full px-4 py-0.5 flex items-center justify-between font-semibold bg-gradient-to-r to-white dark:to-gray-925 whitespace-nowrap text-yellow-800 from-yellow-50 dark:text-yellow-100 dark:from-yellow-900">Community
+						</div>
+						<ul><li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="https://discuss.huggingface.co/" target="_blank">
+		
+			Forum</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/blog">
+		
+			Blog</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/join/discord" target="_blank">
+		
+			Discord</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/course">
+		
+			Course</a></li></ul></li>
+					<li><div class="col-span-full px-4 py-0.5 flex items-center justify-between font-semibold bg-gradient-to-r to-white dark:to-gray-925 whitespace-nowrap text-green-800 from-green-50 dark:text-green-100 dark:from-green-900">Documentation
+						</div>
+						<ul><li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/docs">
+		
+			Doc Search</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/docs/hub">
+		
+			Hub doc</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/docs/accelerate/">
+		
+			Accelerate doc</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/docs/autonlp/">
+		
+			AutoNLP doc</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/docs/datasets/">
+		
+			Datasets doc</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="https://api-inference.huggingface.co/docs/" target="_blank">
+		
+			Inference API doc</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/docs/sagemaker">
+		
+			SageMaker doc</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/docs/tokenizers/python/latest/">
+		
+			Tokenizers doc</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/docs/transformers/">
+		
+			Transformers doc</a></li></ul></li>
+				</ul></div>
+	</div></li>
+
+		<li><div class="relative  v2-dropdown">
+	<button class="
+			px-2 py-0.5 group hover:text-green-700 dark:hover:text-gray-400 flex items-center 
+			
+			v2-dropdown-button" type="button">
+		<svg class="mr-1.5 text-gray-400 group-hover:text-green-500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-tertiary" d="M19 6H5a3 3 0 0 0-3 3v2.72L8.837 14h6.326L22 11.72V9a3 3 0 0 0-3-3z" opacity=".5" fill="currentColor"></path><path class="uim-primary" d="M10 6V5h4v1h2V5a2.002 2.002 0 0 0-2-2h-4a2.002 2.002 0 0 0-2 2v1h2zm-1.163 8L2 11.72V18a3.003 3.003 0 0 0 3 3h14a3.003 3.003 0 0 0 3-3v-6.28L15.163 14H8.837z" fill="currentColor"></path></svg>
+			Solutions
+			</button>
+	
+	
+	<div class="absolute top-full mt-1 min-w-full w-auto bg-white rounded-xl overflow-hidden shadow-lg z-10 border border-gray-100
+		left-0
+		!w-52 v2-dropdown-menu hidden"><ul class="min-w-full w-auto">
+					<li><ul><li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/support">
+		
+			Expert Support</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/inference-api">
+		
+			Inference API</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/autonlp">
+		
+			AutoNLP</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/infinity">
+		
+			Infinity</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			hover:underline
+			v2-dropdown-entry" href="/hardware">
+		
+			Hardware</a></li>
+							<li><a class="flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap 
+			
+			
+			v2-dropdown-entry" href="/platform">
+		
+			Platform</a></li></ul></li>
+				</ul></div>
+	</div></li>
+
+		<li><a class="flex items-center group px-2 py-0.5 hover:text-gray-500 dark:hover:text-gray-400" href="/pricing" data-ga-category="header-menu" data-ga-action="clicked pricing" data-ga-label="pricing">Pricing
+			</a></li>
+		<li><hr class="mx-2 w-0.5 h-5 border-none bg-gray-100 dark:bg-gray-800"></li>
+		<li><a class="px-2 py-0.5 block cursor-pointer hover:text-gray-500 dark:hover:text-gray-400" href="/login">Log In
+				</a></li>
+			<li><a class="ml-2 btn" href="/join">Sign Up </a></li></ul></nav></div></header>
+	
+	
+	<main class="flex flex-col flex-1 "><header class="bg-gradient-to-t from-gray-50-to-white via-white dark:via-gray-950 pt-10 "><div class="container relative"><h1 class="flex items-center flex-wrap text-lg leading-tight mb-2 md:text-xl ">
+			<div class="flex items-center mb-1"><img class="w-4 h-4 mr-1.5 rounded" alt="Facebook AI's picture" src="https://aeiljuispo.cloudimg.io/v7/https://s3.amazonaws.com/moonup/production/uploads/1592839207516-noauth.png?w=200&amp;h=200&amp;f=face">
+					<a href="/facebook" class="font-sans text-gray-400 hover:text-blue-600">facebook</a>
+					<div class="text-gray-300 mx-0.5">/</div></div>
+			<div class="mb-1"><a class="font-mono font-semibold" href="/facebook/bart-base">bart-base</a>
+				<div class="SVELTE_HYDRATER inline mr-5" data-props="{&quot;label&quot;:&quot;objectInfo name&quot;,&quot;noText&quot;:true,&quot;value&quot;:&quot;facebook/bart-base&quot;}" data-target="CopyButton"><button class="inline-flex items-center relative text-sm focus:text-green-500  cursor-pointer focus:outline-none
+		
+		mx-0.5
+		text-gray-600
+		
+	" title="Copy objectInfo name to clipboard" type="button"><svg class="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z" transform="translate(0)"></path><path d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z" transform="translate(0)"></path><rect fill="none" width="32" height="32"></rect></svg>
+	
+	<div class="
+		absolute pointer-events-none transition-opacity bg-black text-white py-1 px-2 leading-tight rounded font-normal shadow 
+		left-1/2 top-full transform -translate-x-1/2 translate-y-2
+		opacity-0
+	"><div class="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-black border-4 border-t-0" style="
+				border-left-color: transparent;
+				border-right-color: transparent;
+			"></div>
+	Copied</div></button></div></div>
+			<div class="SVELTE_HYDRATER mr-5 mb-1" data-props="{&quot;isLikedByUser&quot;:false,&quot;likes&quot;:1,&quot;repoId&quot;:&quot;facebook/bart-base&quot;,&quot;repoType&quot;:&quot;model&quot;}" data-target="LikeButton"><div class="inline-flex items-center border leading-none whitespace-nowrap text-sm rounded-md text-gray-500 overflow-hidden bg-white
+		"><button class="relative flex items-center px-1.5 py-1 hover:bg-gradient-to-t focus:outline-none from-red-50 to-transparent dark:from-red-900 dark:to-red-800 overflow-hidden"  title="Like"><svg class="mr-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" fill="currentColor"><path d="M22.45,6a5.47,5.47,0,0,1,3.91,1.64,5.7,5.7,0,0,1,0,8L16,26.13,5.64,15.64a5.7,5.7,0,0,1,0-8,5.48,5.48,0,0,1,7.82,0L16,10.24l2.53-2.58A5.44,5.44,0,0,1,22.45,6m0-2a7.47,7.47,0,0,0-5.34,2.24L16,7.36,14.89,6.24a7.49,7.49,0,0,0-10.68,0,7.72,7.72,0,0,0,0,10.82L16,29,27.79,17.06a7.72,7.72,0,0,0,0-10.82A7.49,7.49,0,0,0,22.45,4Z"></path></svg>
+
+		<svg class="mr-1 absolute text-red-500 origin-center transform transition ease-in\n\t\t\t\ttranslate-y-10 scale-0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" fill="currentColor"><path d="M22.5,4c-2,0-3.9,0.8-5.3,2.2L16,7.4l-1.1-1.1C12,3.3,7.2,3.3,4.3,6.2c0,0-0.1,0.1-0.1,0.1c-3,3-3,7.8,0,10.8L16,29l11.8-11.9c3-3,3-7.8,0-10.8C26.4,4.8,24.5,4,22.5,4z"></path></svg>
+		like
+	</button>
+	<button class="flex items-center px-1.5 py-1 border-l text-gray-400 focus:outline-none hover:bg-gray-50 dark:hover:bg-gray-700 focus:bg-gray-100 " title="See users who liked this repository">1</button></div>
+</div>
+			</h1>
+		<div class="SVELTE_HYDRATER " data-props="{&quot;tagObjs&quot;:[{&quot;id&quot;:&quot;pytorch&quot;,&quot;label&quot;:&quot;PyTorch&quot;,&quot;type&quot;:&quot;library&quot;},{&quot;id&quot;:&quot;tf&quot;,&quot;label&quot;:&quot;TensorFlow&quot;,&quot;type&quot;:&quot;library&quot;},{&quot;id&quot;:&quot;jax&quot;,&quot;label&quot;:&quot;JAX&quot;,&quot;type&quot;:&quot;library&quot;},{&quot;id&quot;:&quot;transformers&quot;,&quot;label&quot;:&quot;Transformers&quot;,&quot;type&quot;:&quot;library&quot;},{&quot;id&quot;:&quot;en&quot;,&quot;label&quot;:&quot;en&quot;,&quot;type&quot;:&quot;language&quot;},{&quot;id&quot;:&quot;arxiv:1910.13461&quot;,&quot;label&quot;:&quot;arxiv:1910.13461&quot;,&quot;type&quot;:&quot;arxiv&quot;},{&quot;id&quot;:&quot;license:apache-2.0&quot;,&quot;label&quot;:&quot;apache-2.0&quot;,&quot;type&quot;:&quot;license&quot;},{&quot;id&quot;:&quot;bart&quot;,&quot;label&quot;:&quot;bart&quot;,&quot;type&quot;:&quot;other&quot;}]}" data-target="ModelHeaderTags"><div class="flex flex-wrap mb-3 lg:mb-5"><a class="tag 
+		tag-red" href="/models?library=pytorch"><svg class="inline-block ml-2 text-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="0.83em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 310"><path d="M218.281 90.106c50.292 50.292 50.292 130.969 0 181.61c-49.244 50.292-130.27 50.292-180.562 0s-50.292-131.318 0-181.61L127.825 0v45.053l-8.382 8.382l-59.721 59.722c-37.72 37.02-37.72 97.79 0 135.509c37.02 37.719 97.79 37.719 135.509 0c37.719-37.02 37.719-97.79 0-135.51l23.05-23.05zm-45.053-5.588c-9.259 0-16.764-7.505-16.764-16.764c0-9.258 7.505-16.764 16.764-16.764c9.258 0 16.764 7.506 16.764 16.764c0 9.259-7.506 16.764-16.764 16.764z" fill="#EE4C2C"></path></svg>
+	<span>PyTorch</span>
+	</a><a class="tag 
+		tag-red" href="/models?library=tf"><svg class="inline-block ml-2 text-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="0.94em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 274"><path d="M145.726 42.065v42.07l72.861 42.07v-42.07l-72.86-42.07zM0 84.135v42.07l36.43 21.03V105.17L0 84.135zm109.291 21.035l-36.43 21.034v126.2l36.43 21.035v-84.135l36.435 21.035v-42.07l-36.435-21.034V105.17z" fill="#E55B2D"></path><path d="M145.726 42.065L36.43 105.17v42.065l72.861-42.065v42.065l36.435-21.03v-84.14zM255.022 63.1l-36.435 21.035v42.07l36.435-21.035V63.1zm-72.865 84.135l-36.43 21.035v42.07l36.43-21.036v-42.07zm-36.43 63.104l-36.436-21.035v84.135l36.435-21.035V210.34z" fill="#ED8E24"></path><path d="M145.726 0L0 84.135l36.43 21.035l109.296-63.105l72.861 42.07L255.022 63.1L145.726 0zm0 126.204l-36.435 21.03l36.435 21.036l36.43-21.035l-36.43-21.03z" fill="#F8BF3C"></path></svg>
+	<span>TensorFlow</span>
+	</a><a class="tag 
+		tag-red" href="/models?library=jax"><svg class="inline-block ml-2 text-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1.73em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 451 260.81"><style>.J {
+			stroke: #dce0df;
+		}
+		.K {
+			stroke-linejoin: round;
+		}
+	</style><g fill="#5e97f6" class="J K"><path d="M50.5 130.4l-25 43.31h50l25-43.31h-50z"></path><path d="M.5 217.01l25-43.3h50l-25 43.3H.5z"></path><path d="M125.5 173.71h-50l-25 43.3h50l25-43.3z"></path><path d="M175.5 173.71h-50l-25 43.3h50l25-43.3z"></path><path d="M150.5 130.4l-25 43.31h50l25-43.31h-50z"></path><path d="M175.5 87.1l-25 43.3h50l25-43.3h-50z"></path><path d="M200.5 43.8l-25 43.3h50l25-43.3h-50z"></path><path d="M225.5.5l-25 43.3h50l25-43.3h-50z"></path></g><g fill="#2a56c6" class="J K"><path d="M.5 217.01l25 43.3h50l-25-43.3H.5z"></path><path d="M125.5 260.31h-50l-25-43.3h50l25 43.3z"></path><path d="M175.5 260.31h-50l-25-43.3h50l25 43.3z"></path></g><g fill="#00796b" class="J K"><path d="M200.5 217.01l-25-43.3-25 43.3 25 43.3 25-43.3zm50-86.61l-25-43.3-25 43.3h50z"></path><path d="M250.5 43.8l-25 43.3 25 43.3 25-43.3-25-43.3z"></path></g><path d="M125.5 173.71l-25-43.31-25 43.31h50z" fill="#3367d6" class="J K"></path><g fill="#26a69a" class="J K"><path d="M250.5 130.4h-50l-25 43.31h50l25-43.31z"></path><path d="M300.5 130.4h-50l-25 43.31h50l25-43.31z"></path></g><g fill="#9c27b0" class="J K"><path d="M350.5 43.8L325.5.5l-25 43.3 25 43.3 25-43.3z"></path><path d="M375.5 87.1l-25-43.3-25 43.3 25 43.3 25-43.3z"></path><path d="M400.5 130.4l-25-43.3-25 43.3 25 43.31 25-43.31z"></path><path d="M425.5 173.71l-25-43.31-25 43.31 25 43.3 25-43.3z"></path><path d="M450.5 217.01l-25-43.3-25 43.3 25 43.3 25-43.3zM425.5.5l-25 43.3 25 43.3 25-43.3-25-43.3z"></path><path d="M375.5 87.1l25-43.3 25 43.3-25 43.3-25-43.3zm-25 43.3l-25 43.31 25 43.3 25-43.3-25-43.31z"></path><path d="M325.5 260.31l-25-43.3 25-43.3 25 43.3-25 43.3z"></path></g><path d="M275.5 260.31l-25-43.3h50l25 43.3h-50z" fill="#6a1b9a" class="J K"></path><g fill="#00695c" class="J K"><path d="M225.5 173.71h-50l25 43.3h50l-25-43.3z"></path><path d="M275.5 173.71h-50l25 43.3 25-43.3zm0-86.61l25 43.3h50l-25-43.3h-50z"></path><path d="M300.5 43.8h-50l25 43.3h50l-25-43.3zm125 216.51l-25-43.3h-50l25 43.3h50z"></path><path d="M375.5 173.71l-25 43.3h50l-25-43.3z"></path></g><g fill="#ea80fc" class="J K"><path d="M325.5.5h-50l-25 43.3h50l25-43.3zm0 173.21h-50l-25 43.3h50l25-43.3z"></path><path d="M350.5 130.4h-50l-25 43.31h50l25-43.31zM425.5.5h-50l-25 43.3h50l25-43.3z"></path><path d="M375.5 87.1l-25-43.3h50l-25 43.3z"></path></g></svg>
+	<span>JAX</span>
+	</a><a class="tag 
+		tag-red" href="/models?library=transformers">
+	<span>Transformers</span>
+	</a><a class="tag 
+		tag-green" href="/models?language=en">
+	<span>en</span>
+	</a><a class="tag 
+		tag-purple" href="/models?arxiv=arxiv:1910.13461">
+	<span>arxiv:1910.13461</span>
+	</a><a class="tag 
+		tag-blue" href="/models?license=license:apache-2.0">
+	<span>apache-2.0</span>
+	</a><a class="tag 
+		tag-purple" href="/models?other=bart">
+	<span>bart</span>
+	</a></div></div>
+		<div class="border-b border-gray-100"><div class="flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between"><div class="flex items-center h-12 -mb-px overflow-x-auto overflow-y-hidden"><a class="tab-alternate active" href="/facebook/bart-base"><svg class="mr-1.5 text-gray-400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-quaternary" d="M20.23 7.24L12 12L3.77 7.24a1.98 1.98 0 0 1 .7-.71L11 2.76c.62-.35 1.38-.35 2 0l6.53 3.77c.29.173.531.418.7.71z" opacity=".25" fill="currentColor"></path><path class="uim-tertiary" d="M12 12v9.5a2.09 2.09 0 0 1-.91-.21L4.5 17.48a2.003 2.003 0 0 1-1-1.73v-7.5a2.06 2.06 0 0 1 .27-1.01L12 12z" opacity=".5" fill="currentColor"></path><path class="uim-primary" d="M20.5 8.25v7.5a2.003 2.003 0 0 1-1 1.73l-6.62 3.82c-.275.13-.576.198-.88.2V12l8.23-4.76c.175.308.268.656.27 1.01z" fill="currentColor"></path></svg>
+			Model card
+		</a>
+		<a class="tab-alternate " href="/facebook/bart-base/tree/main"><svg class="mr-1.5 text-gray-400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-tertiary" d="M21 19h-8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2zm0-4h-8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2zm0-8h-8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2zm0 4h-8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2z" opacity=".5" fill="currentColor"></path><path class="uim-primary" d="M9 19a1 1 0 0 1-1-1V6a1 1 0 0 1 2 0v12a1 1 0 0 1-1 1zm-6-4.333a1 1 0 0 1-.64-1.769L3.438 12l-1.078-.898a1 1 0 0 1 1.28-1.538l2 1.667a1 1 0 0 1 0 1.538l-2 1.667a.999.999 0 0 1-.64.231z" fill="currentColor"></path></svg>
+			<span class="xl:hidden">Files</span>
+			<span class="hidden xl:inline">Files and versions</span></a>
+		
+		</div>
+				<div class="SVELTE_HYDRATER " data-props="{&quot;model&quot;:{&quot;author&quot;:&quot;facebook&quot;,&quot;autoArchitecture&quot;:&quot;AutoModel&quot;,&quot;branch&quot;:&quot;main&quot;,&quot;cardData&quot;:{&quot;license&quot;:&quot;apache-2.0&quot;,&quot;language&quot;:&quot;en&quot;},&quot;cardSource&quot;:true,&quot;config&quot;:{&quot;architectures&quot;:[&quot;BartModel&quot;],&quot;model_type&quot;:&quot;bart&quot;,&quot;task_specific_params&quot;:{&quot;summarization&quot;:{&quot;length_penalty&quot;:1,&quot;max_length&quot;:128,&quot;min_length&quot;:12,&quot;num_beams&quot;:4},&quot;summarization_cnn&quot;:{&quot;length_penalty&quot;:2,&quot;max_length&quot;:142,&quot;min_length&quot;:56,&quot;num_beams&quot;:4},&quot;summarization_xsum&quot;:{&quot;length_penalty&quot;:1,&quot;max_length&quot;:62,&quot;min_length&quot;:11,&quot;num_beams&quot;:6}}},&quot;id&quot;:&quot;facebook/bart-base&quot;,&quot;lastModified&quot;:&quot;2021-10-01T15:07:14.000Z&quot;,&quot;library_name&quot;:&quot;transformers&quot;,&quot;mask_token&quot;:&quot;&lt;mask&gt;&quot;,&quot;model-index&quot;:null,&quot;private&quot;:false,&quot;gated&quot;:false,&quot;pwcLink&quot;:{&quot;error&quot;:&quot;Unknown error, can&#39;t generate link to Papers With Code.&quot;},&quot;siblings&quot;:[{&quot;rfilename&quot;:&quot;.gitattributes&quot;},{&quot;rfilename&quot;:&quot;README.md&quot;},{&quot;rfilename&quot;:&quot;config.json&quot;},{&quot;rfilename&quot;:&quot;flax_model.msgpack&quot;},{&quot;rfilename&quot;:&quot;merges.txt&quot;},{&quot;rfilename&quot;:&quot;pytorch_model.bin&quot;},{&quot;rfilename&quot;:&quot;tf_model.h5&quot;},{&quot;rfilename&quot;:&quot;tokenizer.json&quot;},{&quot;rfilename&quot;:&quot;vocab.json&quot;}],&quot;tags&quot;:[&quot;pytorch&quot;,&quot;tf&quot;,&quot;jax&quot;,&quot;bart&quot;,&quot;en&quot;,&quot;arxiv:1910.13461&quot;,&quot;transformers&quot;,&quot;license:apache-2.0&quot;],&quot;tag_objs&quot;:[{&quot;id&quot;:&quot;pytorch&quot;,&quot;label&quot;:&quot;PyTorch&quot;,&quot;type&quot;:&quot;library&quot;},{&quot;id&quot;:&quot;tf&quot;,&quot;label&quot;:&quot;TensorFlow&quot;,&quot;type&quot;:&quot;library&quot;},{&quot;id&quot;:&quot;jax&quot;,&quot;label&quot;:&quot;JAX&quot;,&quot;type&quot;:&quot;library&quot;},{&quot;id&quot;:&quot;transformers&quot;,&quot;label&quot;:&quot;Transformers&quot;,&quot;type&quot;:&quot;library&quot;},{&quot;id&quot;:&quot;en&quot;,&quot;label&quot;:&quot;en&quot;,&quot;type&quot;:&quot;language&quot;},{&quot;id&quot;:&quot;arxiv:1910.13461&quot;,&quot;label&quot;:&quot;arxiv:1910.13461&quot;,&quot;type&quot;:&quot;arxiv&quot;},{&quot;id&quot;:&quot;license:apache-2.0&quot;,&quot;label&quot;:&quot;apache-2.0&quot;,&quot;type&quot;:&quot;license&quot;},{&quot;id&quot;:&quot;bart&quot;,&quot;label&quot;:&quot;bart&quot;,&quot;type&quot;:&quot;other&quot;}],&quot;likes&quot;:1,&quot;isLikedByUser&quot;:false}}" data-target="ModelHeaderActions">
+
+
+<div class="relative mb-1.5 space-y-1 sm:flex sm:space-y-0 sm:space-x-1.5 lg:mb-0"><div><div class="relative  ">
+	<button class="
+			text-sm btn 
+			cursor-pointer w-full btn text-sm
+			" type="button">
+		<svg class="mr-1.5 " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M12.1 2a9.8 9.8 0 0 0-5.4 1.6l6.4 6.4a2.1 2.1 0 0 1 .2 3a2.1 2.1 0 0 1-3-.2L3.7 6.4A9.84 9.84 0 0 0 2 12.1a10.14 10.14 0 0 0 10.1 10.1a10.9 10.9 0 0 0 2.6-.3l6.7 6.7a5 5 0 0 0 7.1-7.1l-6.7-6.7a10.9 10.9 0 0 0 .3-2.6A10 10 0 0 0 12.1 2zm8 10.1a7.61 7.61 0 0 1-.3 2.1l-.3 1.1l.8.8l6.7 6.7a2.88 2.88 0 0 1 .9 2.1A2.72 2.72 0 0 1 27 27a2.9 2.9 0 0 1-4.2 0l-6.7-6.7l-.8-.8l-1.1.3a7.61 7.61 0 0 1-2.1.3a8.27 8.27 0 0 1-5.7-2.3A7.63 7.63 0 0 1 4 12.1a8.33 8.33 0 0 1 .3-2.2l4.4 4.4a4.14 4.14 0 0 0 5.9.2a4.14 4.14 0 0 0-.2-5.9L10 4.2a6.45 6.45 0 0 1 2-.3a8.27 8.27 0 0 1 5.7 2.3a8.49 8.49 0 0 1 2.4 5.9z" fill="currentColor"></path></svg>
+			Train
+			<svg class="-mr-1 text-gray-500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="transform: rotate(360deg);"><path d="M7 10l5 5l5-5z" fill="currentColor"></path></svg></button>
+	
+	
+	
+	</div>
+		</div>
+	<div><div class="relative  ">
+	<button class="
+			text-sm btn 
+			cursor-pointer w-full btn text-sm
+			" type="button">
+		<svg class="mr-1.5 " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" fill="currentColor" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><rect x="6.34" y="19" width="11.31" height="2" transform="translate(-10.63 14.34) rotate(-45)"></rect><path d="M17,30a1,1,0,0,1-.37-.07,1,1,0,0,1-.62-.79l-1-7,2-.28.75,5.27L21,24.52V17a1,1,0,0,1,.29-.71l4.07-4.07A8.94,8.94,0,0,0,28,5.86V4H26.14a8.94,8.94,0,0,0-6.36,2.64l-4.07,4.07A1,1,0,0,1,15,11H7.48L4.87,14.26l5.27.75-.28,2-7-1a1,1,0,0,1-.79-.62,1,1,0,0,1,.15-1l4-5A1,1,0,0,1,7,9h7.59l3.77-3.78A10.92,10.92,0,0,1,26.14,2H28a2,2,0,0,1,2,2V5.86a10.92,10.92,0,0,1-3.22,7.78L23,17.41V25a1,1,0,0,1-.38.78l-5,4A1,1,0,0,1,17,30Z"></path></svg>
+			Deploy
+			<svg class="-mr-1 text-gray-500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="transform: rotate(360deg);"><path d="M7 10l5 5l5-5z" fill="currentColor"></path></svg></button>
+	
+	
+	
+	</div>
+		</div>
+	<div class=" "><button class="cursor-pointer w-full 
+		
+		btn 
+		text-sm" type="button" ><svg class="mr-1.5 " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" style="transform: rotate(360deg);"><path d="M31 16l-7 7l-1.41-1.41L28.17 16l-5.58-5.59L24 9l7 7z" fill="currentColor"></path><path d="M1 16l7-7l1.41 1.41L3.83 16l5.58 5.59L8 23l-7-7z" fill="currentColor"></path><path d="M12.419 25.484L17.639 6l1.932.518L14.35 26z" fill="currentColor"></path></svg>
+		Use in Transformers</button>
+	</div></div></div>
+	</div></div></div></header>
+	
+<div class="container relative flex flex-col md:grid md:space-y-0 w-full
+	md:grid-cols-12
+	md:flex-1 md:grid-rows-full 
+		space-y-4
+		md:gap-6
+		
+	"><section class="pt-8 border-gray-100 md:col-span-7 pb-24 relative break-words">
+			
+			
+				<div class="md:mt-2 lg:pr-20 xl:pr-24 2xl:pr-36"><div class="prose dark:prose-light"><h1 class="relative group flex items-center">
+	<a 
+		id="bart-base-sized-model" 
+		class="block pr-1.5 text-lg with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" 
+		href="#bart-base-sized-model"
+	>
+		<span class="header-link"><svg class="text-gray-500 hover:text-black w-4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M29.25 6.76a6 6 0 0 0-8.5 0l1.42 1.42a4 4 0 1 1 5.67 5.67l-8 8a4 4 0 1 1-5.67-5.66l1.41-1.42l-1.41-1.42l-1.42 1.42a6 6 0 0 0 0 8.5A6 6 0 0 0 17 25a6 6 0 0 0 4.27-1.76l8-8a6 6 0 0 0-.02-8.48z" fill="currentColor"></path><path d="M4.19 24.82a4 4 0 0 1 0-5.67l8-8a4 4 0 0 1 5.67 0A3.94 3.94 0 0 1 19 14a4 4 0 0 1-1.17 2.85L15.71 19l1.42 1.42l2.12-2.12a6 6 0 0 0-8.51-8.51l-8 8a6 6 0 0 0 0 8.51A6 6 0 0 0 7 28a6.07 6.07 0 0 0 4.28-1.76l-1.42-1.42a4 4 0 0 1-5.67 0z" fill="currentColor"></path></svg></span>
+	</a>
+	<span>
+		BART (base-sized model)
+	</span>
+</h1>
+<p>BART model pre-trained on English language. It was introduced in the paper <a href="https://arxiv.org/abs/1910.13461" rel="nofollow">BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension</a> by Lewis et al. and first released in <a href="https://github.com/pytorch/fairseq/tree/master/examples/bart" rel="nofollow">this repository</a>. </p>
+<p>Disclaimer: The team releasing BART did not write a model card for this model so this model card has been written by the Hugging Face team.</p>
+<h2 class="relative group flex items-center">
+	<a 
+		id="model-description" 
+		class="block pr-1.5 text-lg with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" 
+		href="#model-description"
+	>
+		<span class="header-link"><svg class="text-gray-500 hover:text-black w-4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M29.25 6.76a6 6 0 0 0-8.5 0l1.42 1.42a4 4 0 1 1 5.67 5.67l-8 8a4 4 0 1 1-5.67-5.66l1.41-1.42l-1.41-1.42l-1.42 1.42a6 6 0 0 0 0 8.5A6 6 0 0 0 17 25a6 6 0 0 0 4.27-1.76l8-8a6 6 0 0 0-.02-8.48z" fill="currentColor"></path><path d="M4.19 24.82a4 4 0 0 1 0-5.67l8-8a4 4 0 0 1 5.67 0A3.94 3.94 0 0 1 19 14a4 4 0 0 1-1.17 2.85L15.71 19l1.42 1.42l2.12-2.12a6 6 0 0 0-8.51-8.51l-8 8a6 6 0 0 0 0 8.51A6 6 0 0 0 7 28a6.07 6.07 0 0 0 4.28-1.76l-1.42-1.42a4 4 0 0 1-5.67 0z" fill="currentColor"></path></svg></span>
+	</a>
+	<span>
+		Model description
+	</span>
+</h2>
+<p>BART is a transformer encoder-encoder (seq2seq) model with a bidirectional (BERT-like) encoder and an autoregressive (GPT-like) decoder. BART is pre-trained by (1) corrupting text with an arbitrary noising function, and (2) learning a model to reconstruct the original text.</p>
+<p>BART is particularly effective when fine-tuned for text generation (e.g. summarization, translation) but also works well for comprehension tasks (e.g. text classification, question answering).</p>
+<h2 class="relative group flex items-center">
+	<a 
+		id="intended-uses--limitations" 
+		class="block pr-1.5 text-lg with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" 
+		href="#intended-uses--limitations"
+	>
+		<span class="header-link"><svg class="text-gray-500 hover:text-black w-4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M29.25 6.76a6 6 0 0 0-8.5 0l1.42 1.42a4 4 0 1 1 5.67 5.67l-8 8a4 4 0 1 1-5.67-5.66l1.41-1.42l-1.41-1.42l-1.42 1.42a6 6 0 0 0 0 8.5A6 6 0 0 0 17 25a6 6 0 0 0 4.27-1.76l8-8a6 6 0 0 0-.02-8.48z" fill="currentColor"></path><path d="M4.19 24.82a4 4 0 0 1 0-5.67l8-8a4 4 0 0 1 5.67 0A3.94 3.94 0 0 1 19 14a4 4 0 0 1-1.17 2.85L15.71 19l1.42 1.42l2.12-2.12a6 6 0 0 0-8.51-8.51l-8 8a6 6 0 0 0 0 8.51A6 6 0 0 0 7 28a6.07 6.07 0 0 0 4.28-1.76l-1.42-1.42a4 4 0 0 1-5.67 0z" fill="currentColor"></path></svg></span>
+	</a>
+	<span>
+		Intended uses &amp; limitations
+	</span>
+</h2>
+<p>You can use the raw model for text infilling. However, the model is mostly meant to be fine-tuned on a supervised dataset. See the <a href="https://huggingface.co/models?search=bart" rel="nofollow">model hub</a> to look for fine-tuned versions on a task that interests you.</p>
+<h3 class="relative group flex items-center">
+	<a 
+		id="how-to-use" 
+		class="block pr-1.5 text-lg with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" 
+		href="#how-to-use"
+	>
+		<span class="header-link"><svg class="text-gray-500 hover:text-black w-4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M29.25 6.76a6 6 0 0 0-8.5 0l1.42 1.42a4 4 0 1 1 5.67 5.67l-8 8a4 4 0 1 1-5.67-5.66l1.41-1.42l-1.41-1.42l-1.42 1.42a6 6 0 0 0 0 8.5A6 6 0 0 0 17 25a6 6 0 0 0 4.27-1.76l8-8a6 6 0 0 0-.02-8.48z" fill="currentColor"></path><path d="M4.19 24.82a4 4 0 0 1 0-5.67l8-8a4 4 0 0 1 5.67 0A3.94 3.94 0 0 1 19 14a4 4 0 0 1-1.17 2.85L15.71 19l1.42 1.42l2.12-2.12a6 6 0 0 0-8.51-8.51l-8 8a6 6 0 0 0 0 8.51A6 6 0 0 0 7 28a6.07 6.07 0 0 0 4.28-1.76l-1.42-1.42a4 4 0 0 1-5.67 0z" fill="currentColor"></path></svg></span>
+	</a>
+	<span>
+		How to use
+	</span>
+</h3>
+<p>Here is how to use this model in PyTorch:</p>
+<pre><code class="language-python"><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> BartTokenizer, BartModel
+
+tokenizer = BartTokenizer.from_pretrained(<span class="hljs-string">&#x27;facebook/bart-base&#x27;</span>)
+model = BartModel.from_pretrained(<span class="hljs-string">&#x27;facebook/bart-base&#x27;</span>)
+
+inputs = tokenizer(<span class="hljs-string">&quot;Hello, my dog is cute&quot;</span>, return_tensors=<span class="hljs-string">&quot;pt&quot;</span>)
+outputs = model(**inputs)
+
+last_hidden_states = outputs.last_hidden_state
+</code></pre>
+<h3 class="relative group flex items-center">
+	<a 
+		id="bibtex-entry-and-citation-info" 
+		class="block pr-1.5 text-lg with-hover:absolute with-hover:p-1.5 with-hover:opacity-0 with-hover:group-hover:opacity-100 with-hover:right-full" 
+		href="#bibtex-entry-and-citation-info"
+	>
+		<span class="header-link"><svg class="text-gray-500 hover:text-black w-4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M29.25 6.76a6 6 0 0 0-8.5 0l1.42 1.42a4 4 0 1 1 5.67 5.67l-8 8a4 4 0 1 1-5.67-5.66l1.41-1.42l-1.41-1.42l-1.42 1.42a6 6 0 0 0 0 8.5A6 6 0 0 0 17 25a6 6 0 0 0 4.27-1.76l8-8a6 6 0 0 0-.02-8.48z" fill="currentColor"></path><path d="M4.19 24.82a4 4 0 0 1 0-5.67l8-8a4 4 0 0 1 5.67 0A3.94 3.94 0 0 1 19 14a4 4 0 0 1-1.17 2.85L15.71 19l1.42 1.42l2.12-2.12a6 6 0 0 0-8.51-8.51l-8 8a6 6 0 0 0 0 8.51A6 6 0 0 0 7 28a6.07 6.07 0 0 0 4.28-1.76l-1.42-1.42a4 4 0 0 1-5.67 0z" fill="currentColor"></path></svg></span>
+	</a>
+	<span>
+		BibTeX entry and citation info
+	</span>
+</h3>
+<pre><code class="language-bibtex">@article{DBLP:journals/corr/abs-1910-13461,
+  author    = {Mike Lewis and
+               Yinhan Liu and
+               Naman Goyal and
+               Marjan Ghazvininejad and
+               Abdelrahman Mohamed and
+               Omer Levy and
+               Veselin Stoyanov and
+               Luke Zettlemoyer},
+  title     = {{BART:} Denoising Sequence-to-Sequence Pre-training for Natural Language
+               Generation, Translation, and Comprehension},
+  journal   = {CoRR},
+  volume    = {abs/1910.13461},
+  year      = {2019},
+  url       = {http://arxiv.org/abs/1910.13461},
+  eprinttype = {arXiv},
+  eprint    = {1910.13461},
+  timestamp = {Thu, 31 Oct 2019 14:02:26 +0100},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-1910-13461.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+</code></pre>
+</div></div></section>
+		<section class="pt-8 border-gray-100 md:col-span-5 pt-6 md:pb-24 md:pl-6 md:border-l order-first md:order-none">
+			<div class="mb-5 flex justify-between"><dl><dt class="-mb-1 text-sm text-gray-500">Downloads last month</dt><dd class="font-semibold">312,774</dd></dl>
+				<div class="model-graph flex-none" style="width: 200px; height: 40px;">
+			<svg 
+				viewbox="0 0 100 100" 
+				width="100%" 
+				height="100%" 
+				preserveAspectRatio="none"
+				style="overflow: visible;"
+			>
+				<defs>
+					<linearGradient id="fill-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+						<stop offset="0%" style="stop-color: rgb(137, 86, 255); stop-opacity:0.3" />
+						<stop offset="100%" style="stop-color: rgb(137, 86, 255); stop-opacity:0.05" />
+					</linearGradient>
+				</defs>
+				
+			<path d="M 0,5C 0.14999999999999986,8.066294809743045 2.6999999999999997,65.78132747019241 3,66.32589619486089C 3.3,66.87046491952937 5.65,17.888718372486526 6,15.89137449336954C 6.35,13.894030614252554 9.649999999999999,23.386180301420534 10,26.37901861252115C 10.35,29.37185692362177 12.65,72.49418604651163 13,75.7481407153819C 13.35,79.00209538425216 16.65,90.69551017195923 17,91.45811198992641C 17.35,92.22071380789359 19.65,91.46652303938929 20,91.00017707472553C 20.35,90.53383111006177 23.65,82.52651202140638 24,82.13119269665133C 24.35,81.73587337189628 26.65,83.11977137685436 27,83.0937905796246C 27.35,83.06780978239483 30.65,82.25913410459214 31,81.61157675205604C 31.35,80.96401939951994 33.7,70.51665486168497 34,70.14264352890254C 34.3,69.76863219612011 36.65,73.04408176917326 37,74.13135009640735C 37.35,75.21861842364144 40.65,91.09699759965372 41,91.88801007358438C 41.35,92.67902254751505 43.65,90.54644768425608 44,89.95159957502065C 44.35,89.35675146578522 47.65,80.4397306496675 48,79.99104788887577C 48.35,79.54236512808404 50.65,80.93701058513359 51,80.97794435918624C 51.35,81.01887813323889 54.65,80.37776925195766 55,80.80972336992878C 55.35,81.24167748789989 57.65,89.39675067878645 58,89.61702671860859C 58.35,89.83730275843072 61.65,85.16244146696573 62,85.21524416637155C 62.35,85.26804686577736 64.7,90.18776315271711 65,90.6730807067249C 65.3,91.1583982607327 67.65,94.46674438279621 68,94.92159524652737C 68.35,95.37644611025854 71.65,99.52337386377052 72,99.77009798134813C 72.35,100.01682209892574 74.65,99.84972258293 75,99.85607759807972C 75.35,99.86243261322944 78.65,99.89392732066266 79,99.89719828434266C 79.35,99.90046924802267 81.65,99.92233797662614 82,99.92149687167985C 82.35,99.92065576673356 85.65,99.87738559005233 86,99.8803761854169C 86.35,99.88336678078149 88.65,99.97532758824224 89,99.9813087789714C 89.35,99.98728996970056 92.65,100.71802325581396 93,100C 93.35,99.28197674418604 95.65,85.68336579703302 96,85.62084366269232C 96.35,85.55832152835163 99.8,98.09312163066147 100,98.74955731318616" 
+				fill="none"
+				stroke="rgb(137, 86, 255)" 
+				stroke-width="3"
+				vector-effect="non-scaling-stroke"
+			/>
+			<path d="M 0,100 0,5C 0.14999999999999986,8.066294809743045 2.6999999999999997,65.78132747019241 3,66.32589619486089C 3.3,66.87046491952937 5.65,17.888718372486526 6,15.89137449336954C 6.35,13.894030614252554 9.649999999999999,23.386180301420534 10,26.37901861252115C 10.35,29.37185692362177 12.65,72.49418604651163 13,75.7481407153819C 13.35,79.00209538425216 16.65,90.69551017195923 17,91.45811198992641C 17.35,92.22071380789359 19.65,91.46652303938929 20,91.00017707472553C 20.35,90.53383111006177 23.65,82.52651202140638 24,82.13119269665133C 24.35,81.73587337189628 26.65,83.11977137685436 27,83.0937905796246C 27.35,83.06780978239483 30.65,82.25913410459214 31,81.61157675205604C 31.35,80.96401939951994 33.7,70.51665486168497 34,70.14264352890254C 34.3,69.76863219612011 36.65,73.04408176917326 37,74.13135009640735C 37.35,75.21861842364144 40.65,91.09699759965372 41,91.88801007358438C 41.35,92.67902254751505 43.65,90.54644768425608 44,89.95159957502065C 44.35,89.35675146578522 47.65,80.4397306496675 48,79.99104788887577C 48.35,79.54236512808404 50.65,80.93701058513359 51,80.97794435918624C 51.35,81.01887813323889 54.65,80.37776925195766 55,80.80972336992878C 55.35,81.24167748789989 57.65,89.39675067878645 58,89.61702671860859C 58.35,89.83730275843072 61.65,85.16244146696573 62,85.21524416637155C 62.35,85.26804686577736 64.7,90.18776315271711 65,90.6730807067249C 65.3,91.1583982607327 67.65,94.46674438279621 68,94.92159524652737C 68.35,95.37644611025854 71.65,99.52337386377052 72,99.77009798134813C 72.35,100.01682209892574 74.65,99.84972258293 75,99.85607759807972C 75.35,99.86243261322944 78.65,99.89392732066266 79,99.89719828434266C 79.35,99.90046924802267 81.65,99.92233797662614 82,99.92149687167985C 82.35,99.92065576673356 85.65,99.87738559005233 86,99.8803761854169C 86.35,99.88336678078149 88.65,99.97532758824224 89,99.9813087789714C 89.35,99.98728996970056 92.65,100.71802325581396 93,100C 93.35,99.28197674418604 95.65,85.68336579703302 96,85.62084366269232C 96.35,85.55832152835163 99.8,98.09312163066147 100,98.74955731318616 L 100,100" 
+				fill="url(#fill-gradient)"
+				stroke="none" 
+				vector-effect="non-scaling-stroke"
+			/>
+		
+			</svg>
+		</div></div>
+			<div class="border-t pt-4 border-gray-100 bg-white"><div class="font-semibold flex items-center mb-2"><div class="text-lg flex items-center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" class="-ml-1 mr-1 text-yellow-500" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14v-8z" fill="currentColor"></path></svg>
+			Hosted inference API
+		</div>
+		<a target="_blank" href="/docs"><svg class="ml-1.5 text-sm text-gray-400 hover:text-black" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M17 22v-8h-4v2h2v6h-3v2h8v-2h-3z" fill="currentColor"></path><path d="M16 8a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 8z" fill="currentColor"></path><path d="M16 30a14 14 0 1 1 14-14a14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z" fill="currentColor"></path></svg></a></div>
+<div class="flex items-center text-sm text-gray-500 mb-1.5">
+	<div class="ml-auto"></div></div>
+					<p class="text-gray-500 text-sm">Unable to determine this model’s pipeline type. Check the
+							<a class="color-inherit" href="/docs/hub/main#how-is-a-models-type-of-inference-api-and-widget-determined">docs <svg class="inline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M17 22v-8h-4v2h2v6h-3v2h8v-2h-3z" fill="currentColor"></path><path d="M16 8a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 8z" fill="currentColor"></path><path d="M16 30a14 14 0 1 1 14-14a14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z" fill="currentColor"></path></svg>
+							</a>.
+						</p></div>
+
+			</section></div></main>
+	<footer class="border-t border-gray-100 md:h-14 b-12 flex mb-2"><nav class="flex md:items-center justify-between container py-6 md:py-0 space-y-2 md:space-y-0 text-gray-500 md:text-sm flex-col md:flex-row"><div class="font-semibold text-black md:hidden">Company</div>
+		<div class="text-gray-400 order-last md:order-none pt-6 md:pt-0" href="Terms">© Hugging Face
+		</div>
+		<a class="hover:underline" href="/terms-of-service">TOS</a>
+		<a class="hover:underline" href="/privacy">Privacy</a>
+		<a class="hover:underline" href="/huggingface">Team</a>
+		<a class="hover:underline" href="https://apply.workable.com/huggingface/">Jobs</a>
+		<a href="/" class="order-first md:order-none pb-6 md:pb-0 flex-none group"><svg class="w-7 h-7 group-hover:-translate-y-px transition-transform" viewBox="0 0 95 88" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M47.2119 76.5C66.4037 76.5 81.9619 60.9419 81.9619 41.75C81.9619 22.5581 66.4037 7 47.2119 7C28.02 7 12.4619 22.5581 12.4619 41.75C12.4619 60.9419 28.02 76.5 47.2119 76.5Z" fill="#FFD21E"></path><path d="M81.9619 41.75C81.9619 22.5581 66.4037 7 47.2119 7C28.02 7 12.4619 22.5581 12.4619 41.75C12.4619 60.9419 28.02 76.5 47.2119 76.5C66.4037 76.5 81.9619 60.9419 81.9619 41.75ZM8.46185 41.75C8.46185 20.349 25.8108 3 47.2119 3C68.6129 3 85.9619 20.349 85.9619 41.75C85.9619 63.151 68.6129 80.5 47.2119 80.5C25.8108 80.5 8.46185 63.151 8.46185 41.75Z" fill="#FF9D0B"></path><path d="M58.5024 32.2915C59.7768 32.7415 60.2839 35.3615 61.5713 34.6769C64.0095 33.3805 64.9351 30.353 63.6387 27.9148C62.3423 25.4767 59.3148 24.5511 56.8766 25.8475C54.4384 27.1439 53.5128 30.1714 54.8092 32.6096C55.4211 33.7604 57.3632 31.8892 58.5024 32.2915Z" fill="#3A3B45"></path><path d="M34.9454 32.2915C33.671 32.7415 33.164 35.3615 31.8766 34.6769C29.4384 33.3805 28.5128 30.353 29.8092 27.9148C31.1056 25.4767 34.1331 24.5511 36.5713 25.8475C39.0095 27.1439 39.9351 30.1714 38.6387 32.6096C38.0268 33.7604 36.0846 31.8892 34.9454 32.2915Z" fill="#3A3B45"></path><path d="M46.9619 56.289C56.7903 56.289 59.9619 47.5261 59.9619 43.0262C59.9619 40.6875 58.3898 41.4236 55.8718 42.6702C53.5449 43.8222 50.4102 45.4101 46.9619 45.4101C39.7822 45.4101 33.9619 38.5263 33.9619 43.0262C33.9619 47.5261 37.1334 56.289 46.9619 56.289Z" fill="#3A3B45"></path><mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="33" y="41" width="27" height="16"><path d="M46.9619 56.289C56.7903 56.289 59.9619 47.5261 59.9619 43.0262C59.9619 40.6875 58.3898 41.4236 55.8718 42.6702C53.5449 43.8222 50.4102 45.4101 46.9619 45.4101C39.7822 45.4101 33.9619 38.5263 33.9619 43.0262C33.9619 47.5261 37.1334 56.289 46.9619 56.289Z" fill="white"></path></mask><g mask="url(#mask0)"><path d="M47.2119 66.5C52.0018 66.5 55.8848 62.617 55.8848 57.8271C55.8848 54.0962 53.5291 50.9156 50.224 49.6915C50.1023 49.6464 49.9794 49.604 49.8553 49.5643C49.0219 49.2979 48.1337 52.1623 47.2119 52.1623C46.3506 52.1623 45.5186 49.2797 44.7332 49.5135C41.151 50.5799 38.5389 53.8984 38.5389 57.8271C38.5389 62.617 42.4219 66.5 47.2119 66.5Z" fill="#F94040"></path></g><path d="M70.7119 37C72.5068 37 73.9619 35.5449 73.9619 33.75C73.9619 31.9551 72.5068 30.5 70.7119 30.5C68.9169 30.5 67.4619 31.9551 67.4619 33.75C67.4619 35.5449 68.9169 37 70.7119 37Z" fill="#FF9D0B"></path><path d="M24.2119 37C26.0068 37 27.4619 35.5449 27.4619 33.75C27.4619 31.9551 26.0068 30.5 24.2119 30.5C22.4169 30.5 20.9619 31.9551 20.9619 33.75C20.9619 35.5449 22.4169 37 24.2119 37Z" fill="#FF9D0B"></path><path class="group-hover:-rotate-6 transition-transform origin-bottom-right" d="M17.5238 48C15.9048 48 14.4578 48.665 13.4488 49.871C12.8248 50.618 12.1728 51.822 12.1198 53.625C11.4408 53.43 10.7878 53.321 10.1778 53.321C8.6278 53.321 7.2278 53.915 6.2378 54.994C4.9658 56.379 4.4008 58.081 4.6468 59.784C4.7638 60.595 5.0348 61.322 5.4398 61.995C4.5858 62.686 3.9568 63.648 3.6528 64.805C3.4148 65.712 3.1708 67.601 4.4448 69.547C4.3638 69.674 4.2878 69.806 4.2168 69.941C3.4508 71.395 3.4018 73.038 4.0778 74.568C5.1028 76.887 7.6498 78.714 12.5958 80.675C15.6728 81.895 18.4878 82.675 18.5128 82.682C22.5808 83.737 26.2598 84.273 29.4448 84.273C35.2988 84.273 39.4898 82.48 41.9018 78.944C45.7838 73.25 45.2288 68.042 40.2058 63.022C37.4258 60.244 35.5778 56.148 35.1928 55.249C34.4168 52.587 32.3648 49.628 28.9538 49.628H28.9528C28.6658 49.628 28.3758 49.651 28.0898 49.696C26.5958 49.931 25.2898 50.791 24.3568 52.085C23.3498 50.833 22.3718 49.837 21.4868 49.275C20.1528 48.429 18.8198 48 17.5238 48ZM17.5238 52C18.0338 52 18.6568 52.217 19.3438 52.653C21.4768 54.006 25.5928 61.081 27.0998 63.833C27.6048 64.755 28.4678 65.145 29.2448 65.145C30.7868 65.145 31.9908 63.612 29.3858 61.664C25.4688 58.733 26.8428 53.942 28.7128 53.647C28.7948 53.634 28.8758 53.628 28.9538 53.628C30.6538 53.628 31.4038 56.558 31.4038 56.558C31.4038 56.558 33.6018 62.078 37.3778 65.851C41.1538 69.625 41.3488 72.654 38.5968 76.69C36.7198 79.442 33.1268 80.273 29.4448 80.273C25.6258 80.273 21.7108 79.379 19.5168 78.81C19.4088 78.782 6.0658 75.013 7.7558 71.805C8.0398 71.266 8.5078 71.05 9.0968 71.05C11.4768 71.05 15.8058 74.592 17.6668 74.592C18.0828 74.592 18.3758 74.415 18.4958 73.983C19.2888 71.138 6.4388 69.942 7.5218 65.821C7.7128 65.092 8.2308 64.796 8.9588 64.797C12.1038 64.797 19.1598 70.328 20.6388 70.328C20.7518 70.328 20.8328 70.295 20.8768 70.225C21.6178 69.029 21.2118 68.194 15.9888 65.033C10.7658 61.871 7.0998 59.969 9.1848 57.699C9.4248 57.437 9.7648 57.321 10.1778 57.321C13.3488 57.322 20.8408 64.14 20.8408 64.14C20.8408 64.14 22.8628 66.243 24.0858 66.243C24.3668 66.243 24.6058 66.132 24.7678 65.858C25.6348 64.396 16.7148 57.636 16.2118 54.847C15.8708 52.957 16.4508 52 17.5238 52Z" fill="#FF9D0B"></path><path class="group-hover:-rotate-6 transition-transform origin-bottom-right" d="M38.5967 76.6898C41.3487 72.6538 41.1537 69.6248 37.3777 65.8508C33.6017 62.0778 31.4037 56.5578 31.4037 56.5578C31.4037 56.5578 30.5827 53.3518 28.7127 53.6468C26.8427 53.9418 25.4697 58.7328 29.3867 61.6638C33.3037 64.5938 28.6067 66.5848 27.0997 63.8328C25.5927 61.0808 21.4777 54.0058 19.3437 52.6528C17.2107 51.2998 15.7087 52.0578 16.2117 54.8468C16.7147 57.6358 25.6357 64.3958 24.7677 65.8588C23.8997 67.3208 20.8407 64.1398 20.8407 64.1398C20.8407 64.1398 11.2687 55.4288 9.18465 57.6988C7.10065 59.9688 10.7657 61.8708 15.9887 65.0328C21.2127 68.1938 21.6177 69.0288 20.8767 70.2248C20.1347 71.4208 8.60465 61.6998 7.52165 65.8208C6.43965 69.9418 19.2887 71.1378 18.4957 73.9828C17.7027 76.8288 9.44465 68.5978 7.75565 71.8048C6.06565 75.0128 19.4087 78.7818 19.5167 78.8098C23.8267 79.9278 34.7727 82.2968 38.5967 76.6898Z" fill="#FFD21E"></path><path class="group-hover:rotate-6 transition-transform origin-bottom-left" d="M77.3999 48C79.0189 48 80.4659 48.665 81.4749 49.871C82.0989 50.618 82.7509 51.822 82.8039 53.625C83.4829 53.43 84.1359 53.321 84.7459 53.321C86.2959 53.321 87.6959 53.915 88.6859 54.994C89.9579 56.379 90.5229 58.081 90.2769 59.784C90.1599 60.595 89.8889 61.322 89.4839 61.995C90.3379 62.686 90.9669 63.648 91.2709 64.805C91.5089 65.712 91.7529 67.601 90.4789 69.547C90.5599 69.674 90.6359 69.806 90.7069 69.941C91.4729 71.395 91.5219 73.038 90.8459 74.568C89.8209 76.887 87.2739 78.714 82.3279 80.675C79.2509 81.895 76.4359 82.675 76.4109 82.682C72.3429 83.737 68.6639 84.273 65.4789 84.273C59.6249 84.273 55.4339 82.48 53.0219 78.944C49.1399 73.25 49.6949 68.042 54.7179 63.022C57.4979 60.244 59.3459 56.148 59.7309 55.249C60.5069 52.587 62.5589 49.628 65.9699 49.628H65.9709C66.2579 49.628 66.5479 49.651 66.8339 49.696C68.3279 49.931 69.6339 50.791 70.5669 52.085C71.5739 50.833 72.5519 49.837 73.4369 49.275C74.7709 48.429 76.1039 48 77.3999 48ZM77.3999 52C76.8899 52 76.2669 52.217 75.5799 52.653C73.4469 54.006 69.3309 61.081 67.8239 63.833C67.3189 64.755 66.4559 65.145 65.6789 65.145C64.1369 65.145 62.9329 63.612 65.5379 61.664C69.4549 58.733 68.0809 53.942 66.2109 53.647C66.1289 53.634 66.0479 53.628 65.9699 53.628C64.2699 53.628 63.5199 56.558 63.5199 56.558C63.5199 56.558 61.3219 62.078 57.5459 65.851C53.7699 69.625 53.5749 72.654 56.3269 76.69C58.2039 79.442 61.7969 80.273 65.4789 80.273C69.2979 80.273 73.2129 79.379 75.4069 78.81C75.5149 78.782 88.8579 75.013 87.1679 71.805C86.8839 71.266 86.4159 71.05 85.8269 71.05C83.4469 71.05 79.1179 74.592 77.2569 74.592C76.8409 74.592 76.5479 74.415 76.4279 73.983C75.6349 71.138 88.4849 69.942 87.4019 65.821C87.2109 65.092 86.6929 64.796 85.9649 64.797C82.8199 64.797 75.7639 70.328 74.2849 70.328C74.1719 70.328 74.0909 70.295 74.0469 70.225C73.3059 69.029 73.7119 68.194 78.9349 65.033C84.1579 61.871 87.8239 59.969 85.7389 57.699C85.4989 57.437 85.1589 57.321 84.7459 57.321C81.5749 57.322 74.0829 64.14 74.0829 64.14C74.0829 64.14 72.0609 66.243 70.8379 66.243C70.5569 66.243 70.3179 66.132 70.1559 65.858C69.2889 64.396 78.2089 57.636 78.7119 54.847C79.0529 52.957 78.4729 52 77.3999 52Z" fill="#FF9D0B"></path><path class="group-hover:rotate-6 transition-transform origin-bottom-left" d="M56.3271 76.6898C53.5751 72.6538 53.7701 69.6248 57.5461 65.8508C61.3221 62.0778 63.5201 56.5578 63.5201 56.5578C63.5201 56.5578 64.3411 53.3518 66.2111 53.6468C68.0811 53.9418 69.4541 58.7328 65.5371 61.6638C61.6201 64.5938 66.3171 66.5848 67.8241 63.8328C69.3311 61.0808 73.4461 54.0058 75.5801 52.6528C77.7131 51.2998 79.2151 52.0578 78.7121 54.8468C78.2091 57.6358 69.2881 64.3958 70.1561 65.8588C71.0241 67.3208 74.0831 64.1398 74.0831 64.1398C74.0831 64.1398 83.6551 55.4288 85.7391 57.6988C87.8231 59.9688 84.1581 61.8708 78.9351 65.0328C73.7111 68.1938 73.3061 69.0288 74.0471 70.2248C74.7891 71.4208 86.3191 61.6998 87.4021 65.8208C88.4841 69.9418 75.6351 71.1378 76.4281 73.9828C77.2211 76.8288 85.4791 68.5978 87.1681 71.8048C88.8581 75.0128 75.5151 78.7818 75.4071 78.8098C71.0971 79.9278 60.1511 82.2968 56.3271 76.6898Z" fill="#FFD21E"></path></svg></a>
+		<div class="font-semibold text-black pt-6 md:pt-0 md:hidden">Website</div>
+
+		<a class="hover:underline" href="/models">Models</a>
+		<a class="hover:underline" href="/datasets">Datasets</a>
+		<a class="hover:underline" href="/spaces">Spaces</a>
+		<a class="hover:underline" href="/pricing">Pricing</a>
+		<a class="hover:underline" href="/docs">Docs</a></nav></footer></div>
+
+		<script>
+			import("/front/build/module/index.b2a13ecb.js");
+			window.supportsDynamicImport = true;
+		</script>
+		<script>
+			if (!window.supportsDynamicImport) {
+				const systemJsLoaderTag = document.createElement("script");
+				systemJsLoaderTag.src =
+					"https://unpkg.com/systemjs@2.0.0/dist/s.min.js";
+				systemJsLoaderTag.addEventListener("load", function () {
+					System.import("./front/build/nomodule/index.b2a13ecb.js");
+				});
+				document.head.appendChild(systemJsLoaderTag);
+			}
+		</script>
+
+		<script type="text/javascript">
+			/// LinkedIn (part 1)
+			_linkedin_partner_id = "3734489";
+			window._linkedin_data_partner_ids =
+				window._linkedin_data_partner_ids || [];
+			window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+		</script>
+
+		<script>
+			if (
+				!(
+					["localhost", "huggingface.test"].includes(
+						window.location.hostname
+					) || window.location.hostname.includes("ngrok.io")
+				)
+			) {
+				(function (i, s, o, g, r, a, m) {
+					i["GoogleAnalyticsObject"] = r;
+					(i[r] =
+						i[r] ||
+						function () {
+							(i[r].q = i[r].q || []).push(arguments);
+						}),
+						(i[r].l = 1 * new Date());
+					(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+					a.async = 1;
+					a.src = g;
+					m.parentNode.insertBefore(a, m);
+				})(
+					window,
+					document,
+					"script",
+					"https://www.google-analytics.com/analytics.js",
+					"ganalytics"
+				);
+				ganalytics("create", "UA-83738774-2", "auto");
+				ganalytics("send", "pageview");
+
+				/// LinkedIn (part 2)
+				(function (l) {
+					if (!l) {
+						window.lintrk = function (a, b) {
+							window.lintrk.q.push([a, b]);
+						};
+						window.lintrk.q = [];
+					}
+					var s = document.getElementsByTagName("script")[0];
+					var b = document.createElement("script");
+					b.type = "text/javascript";
+					b.async = true;
+					b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+					s.parentNode.insertBefore(b, s);
+				})(window.lintrk);
+
+				/// Twitter
+				!(function (e, t, n, s, u, a) {
+					e.twq ||
+						((s = e.twq =
+							function () {
+								s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+							}),
+						(s.version = "1.1"),
+						(s.queue = []),
+						(u = t.createElement(n)),
+						(u.async = !0),
+						(u.src = "//static.ads-twitter.com/uwt.js"),
+						(a = t.getElementsByTagName(n)[0]),
+						a.parentNode.insertBefore(u, a));
+				})(window, document, "script");
+				twq("init", "o6bfm");
+				twq("track", "PageView");
+			}
+		</script>
+
+		<noscript>
+			<!-- LinkedIn (part 3) -->
+			<img
+				height="1"
+				width="1"
+				style="display: none"
+				alt=""
+				src="https://px.ads.linkedin.com/collect/?pid=3734489&fmt=gif"
+			/>
+		</noscript>
+	</body>
+</html>
